@@ -18,7 +18,7 @@
 .global main
   
 main:
-	rcall gpio_init
+  rcall gpio_init
 main_loop:          ; main program loop
   in r16, PORTB     ; read PORTB
   ldi r17, 0xff
