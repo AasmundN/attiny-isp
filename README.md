@@ -1,6 +1,6 @@
 # ATtiny In-circuit Serial Programmer (ISP)
 
-In-circuit Serial Programmer for the first generation of (ATtiny microchontrollers)[https://en.wikipedia.org/wiki/ATtiny_microcontroller_comparison_chart]. These devices are very simple and can only be programmed in assembler; perfect for learning! The ISP programmer is implemented on an ATtiny1607.
+In-circuit Serial Programmer for the first generation of [ATtiny microchontrollers](https://en.wikipedia.org/wiki/ATtiny_microcontroller_comparison_chart). These devices are very simple and can only be programmed in assembler; perfect for learning! The ISP programmer is implemented on an ATtiny1607.
 
 ## How to...
 
@@ -19,5 +19,5 @@ Will add circuit diagrams later...
 
 ## Resources
 
-- (ATtiny15L datasheet)[https://ww1.microchip.com/downloads/en/DeviceDoc/doc1187.pdf]
-- (ATtiny1607 datasheet)[https://ww1.microchip.com/downloads/en/DeviceDoc/ATtiny807_1607-Data-Sheet-40002030A.pdf]
+- [ATtiny15L datasheet](https://ww1.microchip.com/downloads/en/DeviceDoc/doc1187.pdf)
+- [ATtiny1607 datasheet](https://ww1.microchip.com/downloads/en/DeviceDoc/ATtiny807_1607-Data-Sheet-40002030A.pdf)
