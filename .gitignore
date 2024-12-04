@@ -1,0 +1,11 @@
+.DS_Store
+compile_commands.json
+build
+device_pack
+cmake_install.cmake
+*.hex
+*.out
+*.elf
+*.map
+CMakeCache.txt
+.cache
