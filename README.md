@@ -21,3 +21,4 @@ Will add circuit diagrams later...
 
 - [ATtiny15L datasheet](https://ww1.microchip.com/downloads/en/DeviceDoc/doc1187.pdf)
 - [ATtiny1607 datasheet](https://ww1.microchip.com/downloads/en/DeviceDoc/ATtiny807_1607-Data-Sheet-40002030A.pdf)
+- [About AVR assembly](https://www.nongnu.org/avr-libc/user-manual/assembler.html#ass_isr)
