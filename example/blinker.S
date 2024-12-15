@@ -1,13 +1,13 @@
 ; 
-; main.S
+; blinker.S
 ; 
 ; Author : AasmundN
 ;
 ; Simple LED blinker. Toggles all pins in PORTB
 ;
 ; Assemble and link using:
-;   avr-gcc -nostdlib -mmcu=attiny15 main.S -o main.out
-;   avr-objcopy -O binary main.out main.hex
+;   avr-gcc -nostdlib -mmcu=attiny15 blinker.S -o blinker.out
+;   avr-objcopy -O binary blinker.out blinker.bin
 ;  
 ; WARN file ending must be .S
 ;

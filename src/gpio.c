@@ -26,7 +26,7 @@ ISR(PORTC_PORT_vect)
   for (int i = 0; i < 10; i++)
   {
     _delay_ms(50);
-    GPIO_toggle_led();
+    PORTB.OUTTGL |= PIN7_bm;
   }
 
   // setup watchdog timer for hardware reset

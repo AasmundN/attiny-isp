@@ -4,6 +4,7 @@ build
 device_pack
 cmake_install.cmake
 *.hex
+*.bin
 *.out
 *.elf
 *.map
