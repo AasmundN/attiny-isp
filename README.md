@@ -4,17 +4,18 @@ In-circuit Serial Programmer for the first generation of [ATtiny microchontrolle
 
 ## How to...
 
-Compile the source files for ATtiny1607 using the GNU toolchain for AVR (avr-gcc etc) and CMake. You must also install the device family pack (DFP) for the ATtiny1607 and place it in a folder named _device_pack_. 
+Compile the source files for ATtiny1607 using the GNU toolchain for AVR (avr-gcc etc) and CMake. You must also install the device family pack (DFP) for the ATtiny1607 and place it in a folder named _device_pack_. Upload with _pymcuprog_.
 
-The example folder includes a simple led blinker program in assembler for the ATtiny15L. Commands for assembling and linking the program can be found in the same folder.
+A simple CLI tool for communiacting with the programmer is in the cli folder. Install the tool with `go install isp`. For help type `isp --help`.
+
+The example folder includes a simple led blinker program in assembler for the ATtiny15L. A simple Makefile for assembling, linking and uploading the program can be found in the same folder.
 
 Will add circuit diagrams later...
 
 ## Further work
 
-- Add a cool serial interface where you can paste programs to be written to the ATtiny program memory
 - Document code
-- Write a cool assembler program 
+- Write a cool(er) assembler program 
 - PCB?
 
 ## Resources
