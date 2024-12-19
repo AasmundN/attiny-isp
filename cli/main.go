@@ -1,3 +1,10 @@
+/**
+ *
+ * Command line tool for ISP programmer
+ * Should probably split into multiple packages
+ *
+ */
+
 package main
 
 import (
@@ -11,13 +18,6 @@ import (
 	"go.bug.st/serial"
 	"go.bug.st/serial/enumerator"
 )
-
-/**
- *
- * Command line tool for ISP programmer
- * Should probably split into multiple packages
- *
- */
 
 /**
  * Application settings
