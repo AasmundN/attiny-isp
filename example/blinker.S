@@ -1,62 +1,40 @@
-; 
-; blinker.S
-; 
-; Author : AasmundN
 ;
-; Simple LED blinker. Toggles all pins in PORTB
-;
-; Assemble and link using:
-;   avr-gcc -nostdlib -mmcu=attiny15 blinker.S -o blinker.out
-;   avr-objcopy -O binary blinker.out blinker.bin
-;  
-; WARN file ending must be .S
+; ATtiny15L LED blinker using timer/counter0
 ;
 
 #define __SFR_OFFSET 0
 #include <avr/io.h>
 
 .global main
-  
 main:
   rcall gpio_init
-main_loop:          ; main program loop
-  in r16, PORTB     ; read PORTB
-  ldi r17, 0xff
+  rcall timer_init
+main_loop:                                ; main program loop
+  rjmp main_loop
 
-  eor r16, r17      ; toggle bits in PORTB
-  out PORTB, r16    ; wirte PORTB
-
-  rcall delay
-  rcall main_loop
-
-
-gpio_init:          ; initialize PORTB as output
-  ldi r16, 0xff
-  out DDRB, r16     ; direction output
-  out PORTB, r16    ; drive all pins high
+gpio_init:
+  sbi DDRB, PB4                           ; LED pin as output
+  sbi PORTB, PB4                          ; LED pin high
   ret
 
-
-delay:              ; delay routine
-  ldi r17, 0xff
-  ldi r20, 0x00
-delay_loop_outer:
-  cp r17, r20
-  breq end
-  dec r17           
-  ldi 18, 0xff
-delay_loop_inner:
-  nop
-  nop
-  nop
-  nop
-  nop
-  dec r18
-  cp r18, r20
-  brne delay_loop_inner
-  rjmp delay_loop_outer
-end:
+timer_init:
+  ldi r16, (1 << CS00) | (1 << CS02)
+  out TCCR0, r16                          ; CK/1024
+  ldi r16, (1 << TOIE0)
+  out TIMSK, r16                          ; enable overflow interrupt
+  sei
   ret
 
+.global TIMER0_OVF_vect                   ; TIMER0 overflow isr
+TIMER0_OVF_vect:
+  in r16, PORTB                           ; toggle LED pin
+  ldi r17, (1 << PB4)
+  eor r16, r17
+  out PORTB, r16
+  reti
+
+.global __vector_default                  ; default interrupt vector
+__vector_default:
+  reti
 
 .end
