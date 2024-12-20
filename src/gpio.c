@@ -22,7 +22,7 @@ void GPIO_toggle_led(void) { PORTB.OUTTGL |= PIN7_bm; }
  */
 ISR(PORTC_PORT_vect)
 {
-  // rapidly blick buildin led
+  // rapidly blick builtin led
   for (int i = 0; i < 10; i++)
   {
     _delay_ms(50);
