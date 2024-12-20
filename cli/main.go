@@ -13,6 +13,7 @@ import (
 	"os"
 	"slices"
 	"strings"
+	"time"
 
 	"github.com/alecthomas/kong"
 	"go.bug.st/serial"
@@ -127,6 +128,8 @@ func (w *WriteCmd) Run() error {
 	if err != nil {
 		return err
 	}
+
+	port.SetReadTimeout(1 * time.Second)
 
 	buff := []byte{WRITE_VERIFY_ERASE}
 	port.Write(buff) // set programming mode
