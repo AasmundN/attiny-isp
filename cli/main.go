@@ -129,7 +129,7 @@ func (w *WriteCmd) Run() error {
 		return err
 	}
 
-	port.SetReadTimeout(1 * time.Second)
+	port.SetReadTimeout(5 * time.Second)
 
 	buff := []byte{WRITE_VERIFY_ERASE}
 	port.Write(buff) // set programming mode
